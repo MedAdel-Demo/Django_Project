@@ -3,35 +3,35 @@
     "model": "DemocranceApp.policy_type",
     "pk": 1,
     "fields": {
-        "type": "personal-accident"
+        "type_name": "personal-accident"
     }
 },
 {
     "model": "DemocranceApp.policy_type",
     "pk": 2,
     "fields": {
-        "type": "relocation"
+        "type_name": "relocation"
     }
 },
 {
     "model": "DemocranceApp.policy_type",
     "pk": 3,
     "fields": {
-        "type": "private-client"
+        "type_name": "private-client"
     }
 },
 {
     "model": "DemocranceApp.policy_type",
     "pk": 4,
     "fields": {
-        "type": "motorcycle-insurance"
+        "type_name": "motorcycle-insurance"
     }
 },
 {
     "model": "DemocranceApp.policy_type",
     "pk": 5,
     "fields": {
-        "type": "golf-insurance"
+        "type_name": "golf-insurance"
     }
 }
 ]

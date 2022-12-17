@@ -3,35 +3,35 @@
     "model": "DemocranceApp.policy_state",
     "pk": 1,
     "fields": {
-        "state": "New"
+        "state_name": "New"
     }
 },
 {
     "model": "DemocranceApp.policy_state",
     "pk": 2,
     "fields": {
-        "state": "Quoted"
+        "state_name": "Quoted"
     }
 },
 {
     "model": "DemocranceApp.policy_state",
     "pk": 3,
     "fields": {
-        "state": "Accepted"
+        "state_name": "Accepted"
     }
 },
 {
     "model": "DemocranceApp.policy_state",
     "pk": 4,
     "fields": {
-        "state": "Active"
+        "state_name": "Active"
     }
 },
 {
     "model": "DemocranceApp.policy_state",
     "pk": 5,
     "fields": {
-        "state": "Expired"
+        "state_name": "Expired"
     }
 }
 ]

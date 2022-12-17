@@ -1,0 +1,15 @@
+<html>
+<head><title>Search Results Page</title></head>
+
+<body>
+<h2>Search Results:-</h2>
+    <ul>
+        {% for c_p in customer_policies_list %}
+          <li>
+            First Name:- {{ c_p.first_name }},<br/> Last Name:- {{ c_p.last_name }}, <br/> Born:- {{ c_p.dob}},
+          </li>
+        {% endfor %}
+      </ul>
+
+</body>
+</html>

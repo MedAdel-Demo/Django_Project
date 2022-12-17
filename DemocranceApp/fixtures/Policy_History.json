@@ -4,8 +4,8 @@
     "pk": 1,
     "fields": {
         "date": "2022-12-16T20:02:25.703Z",
-        "policy": 1,
-        "state": 1
+        "ph_pid": 1,
+        "ph_sid": 1
     }
 },
 {
@@ -13,8 +13,8 @@
     "pk": 2,
     "fields": {
         "date": "2022-12-16T20:02:30.114Z",
-        "policy": 1,
-        "state": 2
+        "ph_pid": 1,
+        "ph_sid": 2
     }
 },
 {
@@ -22,8 +22,8 @@
     "pk": 3,
     "fields": {
         "date": "2022-12-16T20:02:34.482Z",
-        "policy": 1,
-        "state": 3
+        "ph_pid": 1,
+        "ph_sid": 3
     }
 },
 {
@@ -31,8 +31,8 @@
     "pk": 4,
     "fields": {
         "date": "2022-12-16T20:02:38.770Z",
-        "policy": 1,
-        "state": 4
+        "ph_pid": 1,
+        "ph_sid": 4
     }
 },
 {
@@ -40,8 +40,8 @@
     "pk": 5,
     "fields": {
         "date": "2022-12-16T20:02:44.672Z",
-        "policy": 1,
-        "state": 5
+        "ph_pid": 1,
+        "ph_sid": 5
     }
 }
 ]

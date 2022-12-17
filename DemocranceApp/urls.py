@@ -12,5 +12,7 @@ urlpatterns = [
     path('customersView/', views.CustomersListView.as_view(), name="customers.list"),
     path('Authorized/', views.AuthorizedView.as_view()),
     path('customers/<int:pk>', views.CustomerDetailsView.as_view(), name="customers.details"),
+    path("searchresults/", views.SearchResultsView.as_view(), name="search_results"),
+    path("search/", views.SearchView.as_view(), name="search"),
     path('api/v1/', include(router.urls)),
 ]    

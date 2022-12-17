@@ -6,22 +6,23 @@ class Customer(models.Model):
     dob = models.DateField()
 
 class Policy_State(models.Model):
-    state = models.CharField(max_length=50)
+    state_name = models.CharField(max_length=50)
 
 class Policy_Type(models.Model):
-    type = models.CharField(max_length=50)
+    type_name = models.CharField(max_length=50)
 
 class Policy(models.Model):
-    type = models.ForeignKey(Policy_Type, on_delete=models.CASCADE)
+    type = models.CharField(max_length=50)
+    #tid = models.ForeignKey(Policy_Type, on_delete=models.CASCADE)
     premium = models.DecimalField(max_digits=6, decimal_places=2)
     cover = models.DecimalField(max_digits=9, decimal_places=2)
-    state = models.ForeignKey(Policy_State, on_delete=models.CASCADE)
-    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    sid = models.ForeignKey(Policy_State, on_delete=models.CASCADE)
+    cid = models.ForeignKey(Customer, on_delete=models.CASCADE)
 
 class Policy_History(models.Model):
     date = models.DateTimeField(auto_now_add=True)
-    policy = models.ForeignKey(Policy, on_delete=models.CASCADE)
-    state = models.ForeignKey(Policy_State, on_delete=models.CASCADE)
+    ph_pid = models.ForeignKey(Policy, on_delete=models.CASCADE)
+    ph_sid = models.ForeignKey(Policy_State, on_delete=models.CASCADE)
 
 
 """ Customer:-
