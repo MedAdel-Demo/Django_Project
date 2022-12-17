@@ -1,0 +1,37 @@
+[
+{
+    "model": "DemocranceApp.policy_type",
+    "pk": 1,
+    "fields": {
+        "type": "personal-accident"
+    }
+},
+{
+    "model": "DemocranceApp.policy_type",
+    "pk": 2,
+    "fields": {
+        "type": "relocation"
+    }
+},
+{
+    "model": "DemocranceApp.policy_type",
+    "pk": 3,
+    "fields": {
+        "type": "private-client"
+    }
+},
+{
+    "model": "DemocranceApp.policy_type",
+    "pk": 4,
+    "fields": {
+        "type": "motorcycle-insurance"
+    }
+},
+{
+    "model": "DemocranceApp.policy_type",
+    "pk": 5,
+    "fields": {
+        "type": "golf-insurance"
+    }
+}
+]

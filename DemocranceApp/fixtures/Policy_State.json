@@ -1,0 +1,37 @@
+[
+{
+    "model": "DemocranceApp.policy_state",
+    "pk": 1,
+    "fields": {
+        "state": "New"
+    }
+},
+{
+    "model": "DemocranceApp.policy_state",
+    "pk": 2,
+    "fields": {
+        "state": "Quoted"
+    }
+},
+{
+    "model": "DemocranceApp.policy_state",
+    "pk": 3,
+    "fields": {
+        "state": "Accepted"
+    }
+},
+{
+    "model": "DemocranceApp.policy_state",
+    "pk": 4,
+    "fields": {
+        "state": "Active"
+    }
+},
+{
+    "model": "DemocranceApp.policy_state",
+    "pk": 5,
+    "fields": {
+        "state": "Expired"
+    }
+}
+]

@@ -1,0 +1,47 @@
+[
+{
+    "model": "DemocranceApp.policy_history",
+    "pk": 1,
+    "fields": {
+        "date": "2022-12-16T20:02:25.703Z",
+        "policy": 1,
+        "state": 1
+    }
+},
+{
+    "model": "DemocranceApp.policy_history",
+    "pk": 2,
+    "fields": {
+        "date": "2022-12-16T20:02:30.114Z",
+        "policy": 1,
+        "state": 2
+    }
+},
+{
+    "model": "DemocranceApp.policy_history",
+    "pk": 3,
+    "fields": {
+        "date": "2022-12-16T20:02:34.482Z",
+        "policy": 1,
+        "state": 3
+    }
+},
+{
+    "model": "DemocranceApp.policy_history",
+    "pk": 4,
+    "fields": {
+        "date": "2022-12-16T20:02:38.770Z",
+        "policy": 1,
+        "state": 4
+    }
+},
+{
+    "model": "DemocranceApp.policy_history",
+    "pk": 5,
+    "fields": {
+        "date": "2022-12-16T20:02:44.672Z",
+        "policy": 1,
+        "state": 5
+    }
+}
+]

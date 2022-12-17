@@ -1,0 +1,57 @@
+[
+{
+    "model": "DemocranceApp.policy",
+    "pk": 1,
+    "fields": {
+        "type": 1,
+        "premium": "200.00",
+        "cover": "200000.00",
+        "state": 1,
+        "customer": 1
+    }
+},
+{
+    "model": "DemocranceApp.policy",
+    "pk": 2,
+    "fields": {
+        "type": 2,
+        "premium": "300.00",
+        "cover": "300000.00",
+        "state": 2,
+        "customer": 2
+    }
+},
+{
+    "model": "DemocranceApp.policy",
+    "pk": 3,
+    "fields": {
+        "type": 3,
+        "premium": "400.00",
+        "cover": "400000.00",
+        "state": 3,
+        "customer": 3
+    }
+},
+{
+    "model": "DemocranceApp.policy",
+    "pk": 4,
+    "fields": {
+        "type": 4,
+        "premium": "500.00",
+        "cover": "500000.00",
+        "state": 4,
+        "customer": 1
+    }
+},
+{
+    "model": "DemocranceApp.policy",
+    "pk": 5,
+    "fields": {
+        "type": 5,
+        "premium": "600.00",
+        "cover": "600000.00",
+        "state": 5,
+        "customer": 3
+    }
+}
+]

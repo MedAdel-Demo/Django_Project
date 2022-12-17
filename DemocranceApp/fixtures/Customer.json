@@ -1,0 +1,29 @@
+[
+{
+    "model": "DemocranceApp.customer",
+    "pk": 1,
+    "fields": {
+        "first_name": "Mohamed",
+        "last_name": "Adel",
+        "dob": "1990-04-29"
+    }
+},
+{
+    "model": "DemocranceApp.customer",
+    "pk": 2,
+    "fields": {
+        "first_name": "Damian",
+        "last_name": "Dimmich",
+        "dob": "1989-01-01"
+    }
+},
+{
+    "model": "DemocranceApp.customer",
+    "pk": 3,
+    "fields": {
+        "first_name": "Salman",
+        "last_name": "Saleem",
+        "dob": "1992-01-02"
+    }
+}
+]
