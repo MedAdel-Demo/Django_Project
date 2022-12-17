@@ -13,4 +13,4 @@ urlpatterns = [
     path('Authorized/', views.AuthorizedView.as_view()),
     path('customers/<int:pk>', views.CustomerDetailsView.as_view(), name="customers.details"),
     path('api/v1/', include(router.urls)),
-]   
+]    
