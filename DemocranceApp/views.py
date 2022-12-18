@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from datetime import datetime
 from django.contrib.auth.decorators import login_required
@@ -9,11 +9,11 @@ from django.core.serializers import serialize
 from django.http import Http404
 from django.views.generic import TemplateView 
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import CreateView, ListView, DetailView 
+from django.views.generic import CreateView, ListView, DetailView, UpdateView
 from rest_framework import viewsets
 from .serializers import CustomerSerializer, PolicySerializer
 from django.core.exceptions import ValidationError
-from .forms import CustomerForm
+from .forms import CustomerForm, PolicyForm
 
 # class HomeView(TemplateView):
 #     template_name = 'DemocranceAppTemplates\\index.html'
@@ -33,12 +33,15 @@ def home(request):
             # before writing to the database  
             post = details.save(commit = False)
  
-            # Finally write the changes into database
-            post.save() 
- 
             # redirect it to some another page indicating data
-            # was inserted successfully
-            return HttpResponse("data submitted successfully")
+
+            fn = str(details['first_name'])
+            fn = fn.split('\"')[5]
+            ln = str(details['last_name'])
+            ln = ln.split('\"')[5]
+            dob = str(details['dob'])
+            dob= dob.split('\"')[5]
+            return redirect("CreateQuote/"+"?fn="+ fn+"&ln="+ln+"&dob="+dob)
              
         else:
          
@@ -51,60 +54,51 @@ def home(request):
         # create an empty form object and
         # render it into the page
         form = CustomerForm(None)  
-        return render(request, 'DemocranceAppTemplates\\customers\\create_customer.html', {'form':form})
+        return render(request, 'DemocranceAppTemplates\\index.html', {'form':form})
 
 
 class AuthorizedView(LoginRequiredMixin, TemplateView):
     template_name = 'DemocranceAppTemplates\\403.html'
     login_url='/admin'
 
-# @login_required(login_url='/admin')
-# def Authorized(request):
-#     return render(request, 'DemocranceAppTemplates\\403.html', {})
 
 class CustomersListView(ListView):
     model = Customer
     context_object_name = "customers"
-    template_name = 'DemocranceAppTemplates\\customersView.html'
+    template_name = 'DemocranceAppTemplates\\customers\\customersView.html'
 
 class PoliciesListView(ListView):
     model = Policy
     context_object_name = "policies"
-    template_name = 'DemocranceAppTemplates\\policiesView.html'
+    template_name = 'DemocranceAppTemplates\\policies\\policiesView.html'
+
+class PoliciesListViewofCustomer(ListView):
+        model = Policy
+        context_object_name = "policies"
+        template_name = 'DemocranceAppTemplates\\policies\\policiesViewofcustomer.html'
+    
+        def get_queryset(self):
+            id = self.request.build_absolute_uri() # self.request.GET.get("id")
+            id = int(id.rsplit("/")[-1])
+            combined_queryset = Policy.objects.filter(customer_id=id)
+            return combined_queryset
 
 class PolicyHistoryListView(ListView):
     model = Policy_History
     context_object_name = "policies_history"
     template_name="DemocranceAppTemplates\\policies\\policy_details.html"
     
-
     def get_queryset(self):
         id = self.request.build_absolute_uri() # self.request.GET.get("id")
         id = int(id.rsplit("/")[-1])
         combined_queryset = Policy_History.objects.filter(ph_pid=id)
         return combined_queryset
-# CustomersListView class view to replace the function view below
-# def customerView(request):
-#     # Customer.objects.all().delete()
-#     All_Customers = Customer.objects.all()
-#     return render(request, 'DemocranceAppTemplates\\customersView.html', {'customers': All_Customers})
+
 
 class CustomerDetailsView(DetailView):
             model = Customer
             context_object_name = 'customer'
             template_name = 'DemocranceAppTemplates\\customers\\customer_details.html'
-
-# class PolicyDetailsView(DetailView):
-#             model = Policy_History
-#             context_object_name = 'policies_history'
-#             template_name = 'DemocranceAppTemplates\\policies\\policy_details.html'
-#class view replaces this view, even no need to add the try and catches - it is already handled
-# def customerdetails(request, pk):
-#         try:
-#             customer = Customer.objects.get(pk=pk)
-#             return render(request, 'DemocranceAppTemplates\\customers\\customer_details.html', {'customer' : customer})
-#         except Customer.DoesNotExist:
-#             raise Http404("Customer Doesn't exist")
 
 class CreateCustomerView(CreateView):
     model = Customer
@@ -120,14 +114,21 @@ class CustomerViewSet(viewsets.ModelViewSet):
 
 class CreatePolicyView(CreateView):
     model = Policy
-    fields = ['type', 'premium', 'cover', 'state', 'customer_id']
     success_url = '../policiesView/'
     template_name = "DemocranceAppTemplates\\policies\\create_policy.html"
+    form_class = PolicyForm
+    
+
 
 class PolicyViewSet(viewsets.ModelViewSet):
    queryset = Policy.objects.all()
    serializer_class = PolicySerializer
 
+class UpdatePolicyView(UpdateView):
+    model = Policy
+    success_url = '../policiesView/'
+    template_name = "DemocranceAppTemplates\\policies\\update_policy.html"
+    form_class = PolicyForm
 
 class SearchView(TemplateView):
     template_name = 'DemocranceAppTemplates\search.html'
@@ -151,40 +152,4 @@ class SearchResultsView(ListView):
             ids = Policy.objects.select_related('cid').filter(type=query).values_list('cid', flat=True)
             combined_queryset = Customer.objects.filter(id__in=ids)
 
-            # combined_queryset = Customer.objects.annotate(
-            #     policy_results=Subquery(
-            #     Policy.objects.select_related('customer').filter(type=query)
-            #     )
-            # )
-            
-            #Policy.customer.get_object()
-            #Policy.objects.select_related('customer').prefetch_related('customer').filter(type=query) 
-            
-            #Customer.objects.all().select_related('Policy').select_related('Policy_Type').filter(policy=query)
-            
-        #combined_queryset = Customer.objects.filter(first_name=query)
-        #combined_queryset = Customer.objects.filter(first_name=query) | Customer.objects.filter(last_name=query) | Customer.objects.filter(dob='1989-01-01')
         return combined_queryset
-
-    # def get_context_data(self, **kwargs):
-    #     context = super(SearchResultsView, self).get_context_data(**kwargs)
-    #     context['Customer_list'] = Customer.objects.order_by('first_name')
-    #     return context
-
-
-
-# def CreateCustomer(request):
-#     return PoliciesView()
-
-# class PoliciesView(View): #or TemplateView
-#     def get(self, request):
-#         policies_count = Policy.objects.count()  # TOTAL books in the database
-#         policies = Policy.objects.all()  # Get all book objects from the database
-
-#         policies_serialized_data = serialize('python', policies)
-
-#         data = {
-#             'Policies': policies_serialized_data,
-#             'count': policies_count,
-#         }
-#         return JsonResponse(data)

@@ -9,11 +9,13 @@ router.register(r'create_quote', views.PolicyViewSet)
 router.register(r'quote', views.PolicyViewSet)
 
 urlpatterns = [
-    path('', views.home , name="index"),
+    path('', views.home , name="Login"),
     path('CreateCustomer/', views.CreateCustomerView.as_view(), name="customers.new"),
     path('CreateQuote/', views.CreatePolicyView.as_view(), name="Policy.new"),
+    path('UpdateQuote/<int:pk>/edit', views.UpdatePolicyView.as_view(), name="Policy.Update"),
     path('customersView/', views.CustomersListView.as_view(), name="customers.list"),
     path('policiesView/', views.PoliciesListView.as_view(), name="policies.list"),
+    path('policiesViewofCustomer/<int:pk>', views.PoliciesListViewofCustomer.as_view(), name="policiesofCustomer.list"),
     path('Authorized/', views.AuthorizedView.as_view()),
     path('customers/<int:pk>', views.CustomerDetailsView.as_view(), name="customers.details"),
     path('policies/<int:pk>', views.PolicyHistoryListView.as_view(), name="policy.details"),

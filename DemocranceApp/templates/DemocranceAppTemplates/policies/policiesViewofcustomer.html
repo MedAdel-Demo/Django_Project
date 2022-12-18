@@ -1,5 +1,14 @@
 <html>
-<head><title>Policies Page</title></head>
+<head><title>Policies Page</title>
+
+<script type='text/javascript'>
+        function clickyClick(v) {
+            url = '../UpdateQuote/' + "1/edit" ; //1 is still static (just for showing the example)
+            window.open(url,"_new");
+        }
+</script>
+
+</head>
 
 <body>
 <h1>This is the Policies Page</h1>
@@ -23,11 +32,12 @@
     {{ policy.cover }}
     </td>
     <td>
-        {{ policy.state }}
+    {{ policy.state }}
     </td>
     <td>
-        {{ policy.customer_id }}
+    {{ policy.customer_id }}
     </td>
+    <td> View History <button onclick="clickyClick()" > {{ policy.customer_id }}</button></td>
 </tr>
 {% endfor %}
 </table>

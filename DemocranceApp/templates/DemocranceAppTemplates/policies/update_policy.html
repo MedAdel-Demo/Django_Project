@@ -1,10 +1,10 @@
 <html>
 <head>
-    <title>Create Policy</title>
+    <title>Update Policy</title>
 </head>
 
 <body>
-    <h2>Create a new Quote</h2>
+    <h2>Update an Existing Quote/Policy</h2>
     <form action="{% url 'Policy.new' %}" method="POST"> {% csrf_token %}
         <table>
             <tr>
@@ -14,8 +14,6 @@
             </tr>
         </table>
         <button type="submit">Submit</button>
-        <br/>
-        <h3><a href="../policiesViewofCustomer/1">View Customer Quotes/Policies</a></h3>
     </form>
 </body>
 </html>
