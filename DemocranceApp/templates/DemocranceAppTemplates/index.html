@@ -1,6 +1,34 @@
 <html><head><title>Home Page</title></head>
 
-<body><h1>Welcome to Democrance</h1>
-<p>Today is {{today}}</p>
+<body>
+    <h1>Welcome to Democrance - Customer Login Page</h1>
+    <form method="POST" action=""> <input type='hidden'/>{% csrf_token %}
+        <table>
+            <tr>
+                <td width="20%">Customer FirstName</td>
+                <td><input type="text" name="first_name" /></td>
+            </tr>
+            <tr>
+                <td>Customer Password</td>
+                <td><input type="password" name="last_name" /></td>
+            </tr>
+            <tr>
+                <td colspan="2"><i>Your password is equal to your First 2 Letters of your FirstName + First 2 Letters of
+                        Last Name + DOB in YYYY-MM-DD format
+                        e.g. MOAD1990-04-29</i></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="right"><button type="submit" value="Login" >Login</button></td>
+            </tr>
+
+        </table>
+</form>
+
+{% if form.error %}
+<div>
+    {{ form.errors.title.as_text }}
+</div>
+{% endif %}
+
 </body>
 </html>

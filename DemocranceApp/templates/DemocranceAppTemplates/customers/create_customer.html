@@ -1,8 +1,12 @@
 <html>
     <head><title>Create Customer</title></head>
 <body>
+    <h2>Create a new Customer:-</h2>
 <form action="{% url 'customers.new' %}" method="POST"> {% csrf_token %}
-    {{ form }}
+    <br/>
+    <table><tr><td>{{ form }}</td></tr></table>
+    
+    <br/>
     <button type="submit">Submit</button>
 
 </form>

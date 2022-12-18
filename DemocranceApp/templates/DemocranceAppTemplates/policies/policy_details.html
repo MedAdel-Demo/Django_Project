@@ -1,0 +1,29 @@
+<html>
+<head><title>Policy History Page</title></head>
+
+<body>
+<h1>This is the Policy History Page</h1>
+
+<h2>State History/Changes for same Policy</h2>
+
+<table width="40%">
+    <tr><td>#</td><td>Policy</td><td>State</td><td>State Change Date</td></tr>
+{% for policy in policies_history %}
+<tr>
+    <td> 
+    {{  policy.id }}
+    </td>
+    <td> 
+        {{ policy.ph_pid }}
+    </td>
+    <td>
+    {{ policy.ph_state }}
+    </td>
+    <td>
+    {{ policy.date }}
+    </td>
+</tr>
+{% endfor %}
+</table>
+</body>
+</html>

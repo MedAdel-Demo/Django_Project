@@ -5,43 +5,43 @@
     "fields": {
         "date": "2022-12-16T20:02:25.703Z",
         "ph_pid": 1,
-        "ph_sid": 1
+        "ph_state": "New"
     }
 },
 {
     "model": "DemocranceApp.policy_history",
     "pk": 2,
     "fields": {
-        "date": "2022-12-16T20:02:30.114Z",
+        "date": "2022-12-17T20:02:30.114Z",
         "ph_pid": 1,
-        "ph_sid": 2
+        "ph_state": "Quoted"
     }
 },
 {
     "model": "DemocranceApp.policy_history",
     "pk": 3,
     "fields": {
-        "date": "2022-12-16T20:02:34.482Z",
+        "date": "2022-12-18T20:02:34.482Z",
         "ph_pid": 1,
-        "ph_sid": 3
+        "ph_state": "Accepted"
     }
 },
 {
     "model": "DemocranceApp.policy_history",
     "pk": 4,
     "fields": {
-        "date": "2022-12-16T20:02:38.770Z",
+        "date": "2022-12-18T20:02:38.770Z",
         "ph_pid": 1,
-        "ph_sid": 4
+        "ph_state": "Active"
     }
 },
 {
     "model": "DemocranceApp.policy_history",
     "pk": 5,
     "fields": {
-        "date": "2022-12-16T20:02:44.672Z",
+        "date": "2025-12-16T20:02:44.672Z",
         "ph_pid": 1,
-        "ph_sid": 5
+        "ph_state": "Expired"
     }
 }
 ]

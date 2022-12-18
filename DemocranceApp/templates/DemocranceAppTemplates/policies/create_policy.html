@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>Create Policy</title>
+</head>
+
+<body>
+    <h2>Create a new Quote</h2>
+    <form action="{% url 'Policy.new' %}" method="POST"> {% csrf_token %}
+        <table>
+            <tr>
+                <td>
+                    {{ form }}
+                </td>
+            </tr>
+        </table>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

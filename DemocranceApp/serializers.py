@@ -8,8 +8,13 @@ class CustomerSerializer(serializers.ModelSerializer):
        fields = ('first_name', 'last_name', 'dob')
        
 
+class PolicySerializer(serializers.ModelSerializer):
+   class Meta:
+       model = Policy
+       fields = ('type', 'premium', 'cover', 'state', 'customer_id')
 
-# class SpeciesSerializer(serializers.ModelSerializer):
-#    class Meta:
-#        model = Species
-#        fields = ('name', 'classification', 'language')
+        # "type": "personal-accident",
+        #     "premium": "200.00",
+        #     "cover": "200000.00",
+        #     "state": "New",
+        #     "cid": 1
