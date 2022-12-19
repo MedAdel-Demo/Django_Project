@@ -1,5 +1,5 @@
 # Django_Project
-Steps to start this project - tusing Python 3.7.8 and Django 4.1.4 - writen on the VS Code IDE
+Steps to start this project - using Python 3.7.8 and Django 4.1.4 - writen on the VS Code IDE
 
 1. Migrate the Model using the following commands from the Anaconda Prompt/terminal:-
 python migrate.py makemigrations DemocranceApp
