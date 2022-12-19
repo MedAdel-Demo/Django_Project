@@ -3,11 +3,13 @@ from django.urls import include, path
 from rest_framework import routers
 from . import views
 
+#router created for the APIs
 router = routers.DefaultRouter()
 router.register(r'create_customer', views.CustomerViewSet)
 router.register(r'create_quote', views.PolicyViewSet)
 router.register(r'quote', views.PolicyViewSet)
 
+#Pathes for all the pages of the project
 urlpatterns = [
     path('', views.home , name="Login"),
     path('CreateCustomer/', views.CreateCustomerView.as_view(), name="customers.new"),

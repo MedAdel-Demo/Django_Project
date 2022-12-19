@@ -4,8 +4,8 @@
 </head>
 
 <body>
-    <h2>Update an Existing Quote/Policy</h2>
-    <form action="{% url 'Policy.new' %}" method="POST"> {% csrf_token %}
+    <h2>Update an Existing Quote/Policy - <br/>You can change the state of the Quote to Activated to make it an active Policy</h2>
+    <form method="POST"> {% csrf_token %}
         <table>
             <tr>
                 <td>

@@ -3,6 +3,7 @@ from django import forms
 from .models import Customer, Policy
 from django.core.exceptions import ValidationError
 
+#Class used for the business logic of the Login process at the Home/index page
 class CustomerForm(forms.ModelForm):
     class Meta:
         model = Customer
@@ -21,7 +22,7 @@ class CustomerForm(forms.ModelForm):
         self.cleaned_data['customer_id'] = Customer.objects.filter(first_name=first_name).filter(last_name=last_name).filter(dob=dob).first().pk
         return self.cleaned_data
 
-
+#Class used for the business logic of the Policy Pages
 class PolicyForm(forms.ModelForm):
     class Meta:
         model = Policy

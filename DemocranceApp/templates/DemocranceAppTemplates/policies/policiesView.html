@@ -3,8 +3,8 @@
 
 <script type='text/javascript'>
         function clickyClick(v) {
-            url = '../policies/' + "1" ; //1 is still static (just for showing the example)
-            window.open(url,"_new");
+            url = '../policies/' + "1" ; //1 is still static (whole function is just for demo purposes - not secured)
+            window.open(url,"_self");
         }
 </script>
 
@@ -37,7 +37,7 @@
     <td>
     {{ policy.customer_id }}
     </td>
-    <td> View History <button onclick="clickyClick()" > {{ policy.customer_id }}</button></td>
+    <td> <button onclick="clickyClick()" >View History</button></td>
 </tr>
 {% endfor %}
 </table>
