@@ -18,4 +18,7 @@ python manage.py loaddata DemocranceApp/fixtures/Policy.json --app DemocranceApp
 
 python manage.py loaddata DemocranceApp/fixtures/Policy_History.json --app DemocranceApp.Policy_History
 
+Then finally:-
+python manage.py runserver
+
 #Please note that this project is only created for Demo purposes and may contain some hard-coded sections or some un-secured code blocks added to complete the demo
