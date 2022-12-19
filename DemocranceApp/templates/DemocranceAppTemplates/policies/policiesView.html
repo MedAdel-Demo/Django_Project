@@ -1,13 +1,6 @@
 <html>
 <head><title>Policies Page</title>
 
-<script type='text/javascript'>
-        function clickyClick(v) {
-            url = '../policies/' + "1" ; //1 is still static (whole function is just for demo purposes - not secured)
-            window.open(url,"_self");
-        }
-</script>
-
 </head>
 
 <body>
@@ -37,7 +30,7 @@
     <td>
     {{ policy.customer_id }}
     </td>
-    <td> <button onclick="clickyClick()" >View History</button></td>
+    <td> <a href="{%url 'policy.details' pk=policy.pk %}">View History</a></td>
 </tr>
 {% endfor %}
 </table>

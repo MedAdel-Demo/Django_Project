@@ -1,13 +1,6 @@
 <html>
 <head><title>Policies Page</title>
 
-<script type='text/javascript'>
-        function clickyClick(v) {
-            url = '../UpdateQuote/' + "1/edit" ; //1 is still static (whole function is just for demo purposes - not secured)
-            window.open(url,"_self");
-        }
-</script>
-
 </head>
 
 <body>
@@ -37,7 +30,7 @@
     <td>
     {{ policy.customer_id }}
     </td>
-    <td> <button onclick="clickyClick()" > Edit Quote  </button></td>
+    <td> <a href="{%url 'Policy.Update' pk=policy.pk %}"> Edit Quote </a></td>
 </tr>
 {% endfor %}
 </table>
